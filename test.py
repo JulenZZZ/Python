@@ -9,19 +9,42 @@ precios= {
         2: [2.60,2.75,4.10,5.50,6.49],
         3: [34.32,45,56,78,88,99]
 } 
+def ida():
+    print("Has seleccionado")
+    print(t.zonas)
+    destino=input("Seleccione su destino:")
+    destino.title()
 
+   # for destino,z in zonas.items():
+      # if destino == p:
+       #    """ return """
+    for z,v in t.zonas.items():
+        for d in v:
+            if d==destino:
+                mizona==z
+                break
 
-def print_zona1():
-        return zonas[1]
+    print(t.precios[opc][abs(int(z)-mizona)])
 
-def print_zona2():
-        return zonas[2]
-def print_zona3():
-        return zonas[3]
-def print_zona4():
-        return zonas[4]
-def print_zonas5():
-        return zonas[5]
+def idayvuelta():
+    print(t.zonas)
+    
+    destino=input("Seleccione su destino:")
+    destino.title()
+    
+    for z,v in t.zonas.items():
+        for d in v:
+            if d==destino:
+                mizona==z
+                break
+
+    print(t.precios[opc][abs(int(z)-mizona)])
+
+def mensual():
+    print("este es el mensual.")
+
+def print_zonas(zona):
+    return zona[zona]
 
 def print_preciosIda():
         return precios[1]
@@ -29,6 +52,7 @@ def print_preciosIdaVuelta():
         return precios[2]
 def print_preciosMensual():
         return precios[3]
+
 
 """print(zonas["zona1"]["ida"])"""
 
