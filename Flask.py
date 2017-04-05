@@ -5,9 +5,12 @@ app.debug=True
 
 @app.route("/")
 def hello():
-    name="Julen"
-    name2="Zulaika"
-    return render_template("index.html", name=name,name2=name2)
+    
+    return render_template("index.html")
+
+@app.route("/ida")
+def ida():
+    print("Esta es la funcion de ida.")
 
 if __name__ == "__main__":
     app.run()
