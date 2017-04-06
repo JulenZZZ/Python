@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
-import test as t
+from test import print_zonas
+
 
 app = Flask(__name__)
 app.debug=True
@@ -11,10 +12,15 @@ def hello():
 
 @app.route("/opcion/<opc>")
 def ida(opc):
-    return t.print_zonas()
+    return print_zonas()
 
+@app.route("/opcion/<opc>")
+def idayvuleta(opc):
+    return print_zonas()
 
-
+@app.route("/opcion/<opc>")
+def mensual(opc):
+    return "este es el mensual." 
 
 
 if __name__ == "__main__":
