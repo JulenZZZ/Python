@@ -5,13 +5,13 @@ zonas={1: ["Urnieta","Hernani","Martutene","Loiola","Donostia","Gros","Ategorrie
         5:["Ormaiztegi","Zumarraga","Legazpi"]}
 
 precios= {
-        1: [1.70,1.90,2.60,3.35,3.80,5.0],
-        2: [2.60,2.75,4.10,5.50,6.49],
-        3: [34.32,45,56,78,88,99]
+        1: [1.70,1.90,2.60,3.35,3.80],
+        2: [2.60,2.75,4.10,5.50,6.40],
+        3: [34.45,43.95,58.65,73.30,85.80]
 } 
 def ida():
-    print("Has seleccionado")
-    print(t.zonas)
+    
+    
     destino=input("Seleccione su destino:")
     destino.title()
 
@@ -24,10 +24,10 @@ def ida():
                 mizona==z
                 break
 
-    print(t.precios[opc][abs(int(z)-mizona)])
+    print(precios[opc][abs(int(z)-mizona)])
 
 def idayvuelta():
-    print(t.zonas)
+
     
     destino=input("Seleccione su destino:")
     destino.title()
@@ -38,13 +38,20 @@ def idayvuelta():
                 mizona==z
                 break
 
-    print(t.precios[opc][abs(int(z)-mizona)])
+    return (precios[opc][abs(int(z)-mizona)])
 
 def mensual():
-    print("este es el mensual.")
+    return("Este es el mensual.")
 
-def print_zonas(zona):
-    return zona[zona]
+def print_zonas():
+    #estaciones=[]
+    c_estaciones=""
+    for z,p in zonas.items():
+        for s in p:
+            c_estaciones+='<a href="#" >'+s+'</a> <br>'
+
+    return c_estaciones
+
 
 def print_preciosIda():
         return precios[1]
