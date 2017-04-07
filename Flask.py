@@ -1,26 +1,26 @@
 from flask import Flask
 from flask import render_template
-from test import print_zonas
+import test as t
 
 
 app = Flask(__name__)
 app.debug=True
+
 
 @app.route("/")
 def hello():
     return render_template("index.html")
 
 @app.route("/opcion/<opc>")
-def ida(opc):
-    return print_zonas()
+def p_(opc):
+    if opc=="ida":
+        print("Has seleccionado ida.")
+        return t.print_zonas()
+    elif opc=="idayvuelta":
+        return t.idayvuelta()
 
-@app.route("/opcion/<opc>")
-def idayvuleta(opc):
-    return print_zonas()
-
-@app.route("/opcion/<opc>")
-def mensual(opc):
-    return "este es el mensual." 
+    elif opc=="mensual":
+        return t.mensual()
 
 
 if __name__ == "__main__":
